@@ -1,5 +1,6 @@
 package preserve.controller;
 
+import io.swagger.annotations.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,7 @@ public class PreserveController {
 
     @CrossOrigin(origins = "*")
     @PostMapping(value = "/preserve")
+    @ApiResponse(code = 1, message = "Success.",response = Order.class)
     public HttpEntity preserve(@RequestBody OrderTicketsInfo oti,
                                @RequestHeader HttpHeaders headers) {
         PreserveController.LOGGER.info("[Preserve] Account  order from {} -----> {} at {}", oti.getFrom(), oti.getTo(), oti.getDate());

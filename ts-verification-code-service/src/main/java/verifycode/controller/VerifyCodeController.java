@@ -1,9 +1,6 @@
 package verifycode.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.BasicAuthDefinition;
-import io.swagger.annotations.SwaggerDefinition;
+import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +31,7 @@ public class VerifyCodeController {
 
     @ApiOperation("generate verification image")
     @GetMapping("/generate")
+//    @ApiResponse(response = OutputStream.class)
     public void imageCode(@RequestHeader HttpHeaders headers,
                           HttpServletRequest request,
                           HttpServletResponse response) throws IOException {

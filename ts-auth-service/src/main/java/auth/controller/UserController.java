@@ -2,6 +2,7 @@ package auth.controller;
 
 
 import auth.dto.BasicAuthDto;
+import auth.dto.TokenDto;
 import auth.entity.User;
 import auth.exception.UserOperationException;
 import auth.service.TokenService;
@@ -9,6 +10,8 @@ import auth.service.UserService;
 import edu.fudan.common.util.Response;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +47,11 @@ public class UserController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "dao", value = "BasicAuthDto",dataType = "BasicAuthDto", paramType = "body",required = true),
             @ApiImplicitParam(name = "headers",  paramType = "header",required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0, message = "Verification failed."),
+            @ApiResponse(code = 0, message = "Incorrect username or password."),
+            @ApiResponse(code = 1, message = "login success",response = TokenDto.class)
     })
     public ResponseEntity<Response> getToken(@RequestBody BasicAuthDto dao , @RequestHeader HttpHeaders headers) {
         logger.info("Login request of username: {}", dao.getUsername());

@@ -1,6 +1,9 @@
 package assurance.controller;
 
+import assurance.entity.AssuranceTypeBean;
 import assurance.service.AssuranceService;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +11,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 import static org.springframework.http.ResponseEntity.ok;
@@ -38,6 +42,10 @@ public class AssuranceController {
 
     @CrossOrigin(origins = "*")
     @GetMapping(path = "/assurances/types")
+    @ApiResponses({
+            @ApiResponse(code = 1, message = "Find All Assurance",response = AssuranceTypeBean.class,responseContainer = "List"),
+            @ApiResponse(code = 0, message = "Assurance is Empty")
+    })
     public HttpEntity getAllAssuranceType(@RequestHeader HttpHeaders headers) {
         AssuranceController.LOGGER.info("Get Assurance Type");
         return ok(assuranceService.getAllAssuranceTypes(headers));

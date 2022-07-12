@@ -5,6 +5,7 @@ import fdse.microservice.entity.*;
 import fdse.microservice.service.StationService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,6 +82,7 @@ public class StationController {
             @ApiImplicitParam(name = "stationId", value = "stationId",dataType = "String", paramType = "path",required = true,defaultValue = "shanghaihongqiao"),
             @ApiImplicitParam(name = "headers",  paramType = "header",required = true)
     })
+    @ApiResponse(code = 1, message = "success",response = String.class)
     public HttpEntity queryById(@PathVariable(value = "stationIdForName")
                                         String stationId, @RequestHeader HttpHeaders headers) {
         StationController.LOGGER.info("Query stations By Id: {}", stationId);

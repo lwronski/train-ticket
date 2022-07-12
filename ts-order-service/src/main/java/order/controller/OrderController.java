@@ -2,6 +2,7 @@ package order.controller;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiResponse;
 import order.entity.*;
 import order.service.OrderService;
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import static org.springframework.http.ResponseEntity.ok;
@@ -69,6 +71,7 @@ public class OrderController {
             @ApiImplicitParam(name = "qi", value = "OrderInfo",dataType = "OrderInfo", paramType = "body",required = true),
             @ApiImplicitParam(name = "headers",  paramType = "header",required = true)
     })
+    @ApiResponse(code = 1, message = "Query Orders For Refresh Success",response = Order.class,responseContainer = "ArrayList")
     public HttpEntity queryOrdersForRefresh(@RequestBody OrderInfo qi,
                                             @RequestHeader HttpHeaders headers) {
         OrderController.LOGGER.info("[Query Orders] Query Orders for {}", qi.getLoginId());

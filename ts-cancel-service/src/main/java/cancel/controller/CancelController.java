@@ -4,6 +4,8 @@ import cancel.service.CancelService;
 import edu.fudan.common.util.Response;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,11 @@ public class CancelController {
             @ApiImplicitParam(name = "orderId", value = "orderId",dataType = "String", paramType = "path",required = true,defaultValue = "fa9bd99c-2f28-45a9-9d87-7630caaccc6a"),
             @ApiImplicitParam(name = "headers",  paramType = "header",required = true)
     })
+    @ApiResponses({
+            @ApiResponse(code = 1, message = "Success. Refoud 0"),
+            @ApiResponse(code = 1, message = "Success. ",response = String.class),
+            @ApiResponse(code = 0, message = "Order Status Cancel Not Permitted, Refound error")
+    })
     public HttpEntity calculate(@PathVariable String orderId, @RequestHeader HttpHeaders headers) {
         CancelController.LOGGER.info("[Calculate Cancel Refund] OrderId: {}", orderId);
         return ok(cancelService.calculateRefund(orderId, headers));
@@ -48,6 +55,10 @@ public class CancelController {
             @ApiImplicitParam(name = "orderId", value = "orderId",dataType = "String", paramType = "path",required = true,defaultValue = "fa9bd99c-2f28-45a9-9d87-7630caaccc6a"),
             @ApiImplicitParam(name = "loginId", value = "loginId",dataType = "String", paramType = "path",required = true,defaultValue = "4d2a46c7-71cb-4cf1-b5bb-b68406d9da6f"),
             @ApiImplicitParam(name = "headers",  paramType = "header",required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 1, message = "Success."),
+            @ApiResponse(code = 0,message = "Order Status Cancel Not Permitted")
     })
     public HttpEntity cancelTicket(@PathVariable String orderId, @PathVariable String loginId,
                                    @RequestHeader HttpHeaders headers) {

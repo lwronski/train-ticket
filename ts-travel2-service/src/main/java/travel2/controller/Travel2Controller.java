@@ -2,6 +2,8 @@ package travel2.controller;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,6 +111,10 @@ public class Travel2Controller {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "info", value = "TripInfo",dataType = "TripInfo", paramType = "body",required = true),
             @ApiImplicitParam(name = "headers",  paramType = "header",required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 1, message = "Success Query",response = TripResponse.class,responseContainer = "ArrayList"),
+            @ApiResponse(code = 0, message = "No Content")
     })
     public HttpEntity queryInfo(@RequestBody TripInfo info, @RequestHeader HttpHeaders headers) {
         if (info.getStartingPlace() == null || info.getStartingPlace().length() == 0 ||

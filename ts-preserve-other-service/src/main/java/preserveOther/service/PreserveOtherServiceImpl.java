@@ -161,7 +161,9 @@ public class PreserveOtherServiceImpl implements PreserveOtherService {
         }
 
         PreserveOtherServiceImpl.LOGGER.info("[Step 4] Do Order Complete");
-        Response returnResponse = new Response<>(1, "Success.", cor.getMsg());
+
+//        改掉,getMsg改成getData
+        Response returnResponse = new Response<>(1, "Success.", cor.getData());
         //5.Check insurance options
         if (oti.getAssurance() == 0) {
             PreserveOtherServiceImpl.LOGGER.info("[Step 5] Do not need to buy assurance");

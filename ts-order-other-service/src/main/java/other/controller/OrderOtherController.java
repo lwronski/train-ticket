@@ -2,6 +2,7 @@ package other.controller;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import other.entity.*;
 import other.service.OrderOtherService;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import static org.springframework.http.ResponseEntity.ok;
@@ -69,6 +71,7 @@ public class OrderOtherController {
             @ApiImplicitParam(name = "qi", value = "QueryInfo",dataType = "QueryInfo", paramType = "body",required = true),
             @ApiImplicitParam(name = "headers",  paramType = "header",required = true)
     })
+    @ApiResponse(code = 1, message = "success",response = Order.class,responseContainer = "ArrayList")
     @CrossOrigin(origins = "*")
     @PostMapping(path = "/orderOther/refresh")
     public HttpEntity queryOrdersForRefresh(@RequestBody QueryInfo qi,

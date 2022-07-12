@@ -2,10 +2,7 @@ package contacts.controller;
 
 import contacts.entity.*;
 import edu.fudan.common.util.Response;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +10,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import contacts.service.ContactsService;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 import static org.springframework.http.ResponseEntity.ok;
@@ -46,6 +44,10 @@ public class ContactsController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "aci", value = "Contacts",dataType = "Contacts", paramType = "body",required = true),
             @ApiImplicitParam(name = "headers",  paramType = "header",required = true)
+    })
+    @ApiResponses({
+            @ApiResponse(code = 0, message = "Contacts already exists"),
+            @ApiResponse(code = 1, message = "Create contacts success",response = Contacts.class)
     })
     @CrossOrigin(origins = "*")
     @PostMapping(path = "/contacts")
@@ -83,6 +85,7 @@ public class ContactsController {
             @ApiImplicitParam(name = "accountId", value = "accountId",dataType = "String", paramType = "path",required = true,defaultValue = "4d2a46c7-71cb-4cf1-b5bb-b68406d9da6f"),
             @ApiImplicitParam(name = "headers",  paramType = "header",required = true)
     })
+    @ApiResponse(code = 1, message = "success",response = Contacts.class,responseContainer = "ArrayList")
     @CrossOrigin(origins = "*")
     @GetMapping(path = "/contacts/account/{accountId}")
     public HttpEntity findContactsByAccountId(@PathVariable String accountId, @RequestHeader HttpHeaders headers) {

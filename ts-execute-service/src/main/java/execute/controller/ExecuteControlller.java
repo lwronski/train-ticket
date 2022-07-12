@@ -3,6 +3,8 @@ package execute.controller;
 import execute.serivce.ExecuteService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,10 @@ public class ExecuteControlller {
     @CrossOrigin(origins = "*")
     @GetMapping(path = "/execute/execute/{orderId}")
     @ApiOperation("executeTicket")
+    @ApiResponses({
+            @ApiResponse(code = 0,message = "Order Status Wrong"),
+            @ApiResponse(code = 1, message = "Success.")
+    })
     public HttpEntity executeTicket(@PathVariable String orderId, @RequestHeader HttpHeaders headers) {
         ExecuteControlller.LOGGER.info("[Execute] Id: {}", orderId);
         // null
@@ -41,6 +47,10 @@ public class ExecuteControlller {
 
     @CrossOrigin(origins = "*")
     @GetMapping(path = "/execute/collected/{orderId}")
+    @ApiResponses({
+            @ApiResponse(code = 0,message = "Order Status Wrong"),
+            @ApiResponse(code = 1, message = "Success.")
+    })
     public HttpEntity collectTicket(@PathVariable String orderId, @RequestHeader HttpHeaders headers) {
         ExecuteControlller.LOGGER.info("[Collect] Id: {}", orderId);
         // null
