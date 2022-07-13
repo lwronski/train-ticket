@@ -37,7 +37,7 @@ public class FoodDeliveryController {
         return ok(foodDeliveryService.createFoodDeliveryOrder(fd, headers));
     }
 
-    @DeleteMapping("/orders/{orderId}")
+    @DeleteMapping("/orders/d/{orderId}")
     public HttpEntity deleteFoodDeliveryOrder(@PathVariable String orderId, @RequestHeader HttpHeaders headers) {
         LOGGER.info("[Food Delivery Service][Delete Food Delivery Order]");
         return ok(foodDeliveryService.deleteFoodDeliveryOrder(orderId, headers));
@@ -55,7 +55,7 @@ public class FoodDeliveryController {
         return ok(foodDeliveryService.getAllFoodDeliveryOrders(headers));
     }
 
-    @GetMapping("/orders/{storeId}")
+    @GetMapping("/orders/store/{storeId}")
     public HttpEntity getFoodDeliveryOrderByStoreId(@PathVariable String storeId, @RequestHeader HttpHeaders headers) {
         LOGGER.info("[Food Delivery Service][Get Food Delivery Order By StoreId]");
         return ok(foodDeliveryService.getFoodDeliveryOrderByStoreId(storeId, headers));

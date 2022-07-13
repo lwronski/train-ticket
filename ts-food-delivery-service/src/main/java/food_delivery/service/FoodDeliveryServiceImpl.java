@@ -28,8 +28,8 @@ public class FoodDeliveryServiceImpl implements FoodDeliveryService {
             LOGGER.error("[createFoodDeliveryOrder] Already exists id: {}", id);
             return new Response<>(0, "Already exists id", id);
         } else {
-            foodDeliveryOrderRepository.save(fd);
-            return new Response<>(1, "Save success", fd);
+            FoodDeliveryOrder res = foodDeliveryOrderRepository.save(fd);
+            return new Response<>(1, "Save success", res);
         }
     }
 
@@ -42,7 +42,7 @@ public class FoodDeliveryServiceImpl implements FoodDeliveryService {
         } else {
             foodDeliveryOrderRepository.deleteById(id);
             LOGGER.info("[deleteFoodDeliveryOrder] Delete success, food delivery order id: {}", id);
-            return new Response<>(1, "Delete success", t);
+            return new Response<>(1, "Delete success", null);
         }
     }
 
