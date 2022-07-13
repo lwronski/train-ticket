@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ts-admin-basic-info-service
-          image: cqqcqq/ts-admin-basic-info-service:jacoco
+          image: cqqcqq/ts-admin-basic-info-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -55,7 +55,7 @@ spec:
     spec:
       containers:
         - name: ts-admin-order-service
-          image: cqqcqq/ts-admin-order-service:jacoco
+          image: cqqcqq/ts-admin-order-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -95,7 +95,7 @@ spec:
     spec:
       containers:
         - name: ts-admin-route-service
-          image: cqqcqq/ts-admin-route-service:jacoco
+          image: cqqcqq/ts-admin-route-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -135,7 +135,7 @@ spec:
     spec:
       containers:
         - name: ts-admin-travel-service
-          image: cqqcqq/ts-admin-travel-service:jacoco
+          image: cqqcqq/ts-admin-travel-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -175,7 +175,7 @@ spec:
     spec:
       containers:
         - name: ts-admin-user-service
-          image: cqqcqq/ts-admin-user-service:jacoco
+          image: cqqcqq/ts-admin-user-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -215,7 +215,7 @@ spec:
     spec:
       containers:
         - name: ts-assurance-service
-          image: cqqcqq/ts-assurance-service:jacoco
+          image: cqqcqq/ts-assurance-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -255,7 +255,7 @@ spec:
     spec:
       containers:
         - name: ts-basic-service
-          image: cqqcqq/ts-basic-service:jacoco
+          image: cqqcqq/ts-basic-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -295,7 +295,7 @@ spec:
     spec:
       containers:
         - name: ts-cancel-service
-          image: cqqcqq/ts-cancel-service:jacoco
+          image: cqqcqq/ts-cancel-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -335,7 +335,7 @@ spec:
     spec:
       containers:
         - name: ts-config-service
-          image: cqqcqq/ts-config-service:jacoco
+          image: cqqcqq/ts-config-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -375,7 +375,7 @@ spec:
     spec:
       containers:
         - name: ts-consign-price-service
-          image: cqqcqq/ts-consign-price-service:jacoco
+          image: cqqcqq/ts-consign-price-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -415,7 +415,7 @@ spec:
     spec:
       containers:
         - name: ts-consign-service
-          image: cqqcqq/ts-consign-service:jacoco
+          image: cqqcqq/ts-consign-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -455,7 +455,7 @@ spec:
     spec:
       containers:
         - name: ts-contacts-service
-          image: cqqcqq/ts-contacts-service:jacoco
+          image: cqqcqq/ts-contacts-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -495,7 +495,7 @@ spec:
     spec:
       containers:
         - name: ts-execute-service
-          image: cqqcqq/ts-execute-service:jacoco
+          image: cqqcqq/ts-execute-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -535,7 +535,7 @@ spec:
     spec:
       containers:
         - name: ts-food-map-service
-          image: cqqcqq/ts-food-map-service:jacoco
+          image: cqqcqq/ts-food-map-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -575,7 +575,7 @@ spec:
     spec:
       containers:
         - name: ts-food-service
-          image: cqqcqq/ts-food-service:jacoco
+          image: cqqcqq/ts-food-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -619,7 +619,7 @@ spec:
     spec:
       containers:
         - name: ts-inside-payment-service
-          image: cqqcqq/ts-inside-payment-service:jacoco
+          image: cqqcqq/ts-inside-payment-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -659,7 +659,7 @@ spec:
     spec:
       containers:
         - name: ts-auth-service
-          image: cqqcqq/ts-auth-service:jacoco
+          image: cqqcqq/ts-auth-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -699,7 +699,7 @@ spec:
     spec:
       containers:
         - name: ts-news-service
-          image: cqqcqq/ts-news-service:jacoco
+          image: cqqcqq/ts-news-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -739,7 +739,7 @@ spec:
     spec:
       containers:
         - name: ts-notification-service
-          image: cqqcqq/ts-notification-service:jacoco
+          image: cqqcqq/ts-notification-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -787,7 +787,7 @@ spec:
     spec:
       containers:
         - name: ts-order-other-service
-          image: cqqcqq/ts-order-other-service:jacoco
+          image: cqqcqq/ts-order-other-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -827,7 +827,7 @@ spec:
     spec:
       containers:
         - name: ts-order-service
-          image: cqqcqq/ts-order-service:jacoco
+          image: cqqcqq/ts-order-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -867,7 +867,7 @@ spec:
     spec:
       containers:
         - name: ts-payment-service
-          image: cqqcqq/ts-payment-service:jacoco
+          image: cqqcqq/ts-payment-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -907,7 +907,7 @@ spec:
     spec:
       containers:
         - name: ts-preserve-other-service
-          image: cqqcqq/ts-preserve-other-service:jacoco
+          image: cqqcqq/ts-preserve-other-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -951,7 +951,7 @@ spec:
     spec:
       containers:
         - name: ts-preserve-service
-          image: cqqcqq/ts-preserve-service:jacoco
+          image: cqqcqq/ts-preserve-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -995,7 +995,7 @@ spec:
     spec:
       containers:
         - name: ts-price-service
-          image: cqqcqq/ts-price-service:jacoco
+          image: cqqcqq/ts-price-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1035,7 +1035,7 @@ spec:
     spec:
       containers:
         - name: ts-rebook-service
-          image: cqqcqq/ts-rebook-service:jacoco
+          image: cqqcqq/ts-rebook-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1075,7 +1075,7 @@ spec:
     spec:
       containers:
         - name: ts-route-plan-service
-          image: cqqcqq/ts-route-plan-service:jacoco
+          image: cqqcqq/ts-route-plan-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1115,7 +1115,7 @@ spec:
     spec:
       containers:
         - name: ts-route-service
-          image: cqqcqq/ts-route-service:jacoco
+          image: cqqcqq/ts-route-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1155,7 +1155,7 @@ spec:
     spec:
       containers:
         - name: ts-seat-service
-          image: cqqcqq/ts-seat-service:jacoco
+          image: cqqcqq/ts-seat-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1195,7 +1195,7 @@ spec:
     spec:
       containers:
         - name: ts-security-service
-          image: cqqcqq/ts-security-service:jacoco
+          image: cqqcqq/ts-security-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1235,7 +1235,7 @@ spec:
     spec:
       containers:
         - name: ts-user-service
-          image: cqqcqq/ts-user-service:jacoco
+          image: cqqcqq/ts-user-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1275,7 +1275,7 @@ spec:
     spec:
       containers:
         - name: ts-station-service
-          image: cqqcqq/ts-station-service:jacoco
+          image: cqqcqq/ts-station-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1355,7 +1355,7 @@ spec:
     spec:
       containers:
         - name: ts-ticketinfo-service
-          image: cqqcqq/ts-ticketinfo-service:jacoco
+          image: cqqcqq/ts-ticketinfo-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1395,7 +1395,7 @@ spec:
     spec:
       containers:
         - name: ts-train-service
-          image: cqqcqq/ts-train-service:jacoco
+          image: cqqcqq/ts-train-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1435,7 +1435,7 @@ spec:
     spec:
       containers:
         - name: ts-travel2-service
-          image: cqqcqq/ts-travel2-service:jacoco
+          image: cqqcqq/ts-travel2-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1475,7 +1475,7 @@ spec:
     spec:
       containers:
         - name: ts-travel-plan-service
-          image: cqqcqq/ts-travel-plan-service:jacoco
+          image: cqqcqq/ts-travel-plan-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1515,7 +1515,7 @@ spec:
     spec:
       containers:
         - name: ts-travel-service
-          image: cqqcqq/ts-travel-service:jacoco
+          image: cqqcqq/ts-travel-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1555,7 +1555,7 @@ spec:
     spec:
       containers:
         - name: ts-delivery-service
-          image: cqqcqq/ts-delivery-service:jacoco
+          image: cqqcqq/ts-delivery-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -1600,7 +1600,7 @@ spec:
     spec:
       containers:
         - name: ts-verification-code-service
-          image: cqqcqq/ts-verification-code-service:jacoco
+          image: cqqcqq/ts-verification-code-service:response
           imagePullPolicy: Always
           env:
             - name: NODE_IP
@@ -2297,7 +2297,7 @@ spec:
 #    spec:
 #      containers:
 #      - name: ts-avatar-service
-#        image: cqqcqq/ts-avatar-service:jacoco
+#        image: cqqcqq/ts-avatar-service:response
 #        imagePullPolicy: Always
 #        ports:
 #        - containerPort: 17001
