@@ -18,7 +18,7 @@ public class TrainServiceImpl implements TrainService {
     @Override
     public boolean create(TrainType trainType, HttpHeaders headers) {
         boolean result = false;
-        if (repository.findById(trainType.getId()) == null) {
+        if (repository.findById(trainType.getId()).orElse(null) == null) {
             TrainType type = new TrainType(trainType.getId(), trainType.getEconomyClass(), trainType.getConfortClass());
             type.setAverageSpeed(trainType.getAverageSpeed());
             repository.save(type);
@@ -32,14 +32,14 @@ public class TrainServiceImpl implements TrainService {
         if (repository.findById(id) == null) {
             return null;
         } else {
-            return repository.findById(id);
+            return repository.findById(id).orElse(null);
         }
     }
 
     @Override
     public boolean update(TrainType trainType, HttpHeaders headers) {
         boolean result = false;
-        if (repository.findById(trainType.getId()) != null) {
+        if (repository.findById(trainType.getId()).orElse(null) != null) {
             TrainType type = new TrainType(trainType.getId(), trainType.getEconomyClass(), trainType.getConfortClass());
             type.setAverageSpeed(trainType.getAverageSpeed());
             repository.save(type);

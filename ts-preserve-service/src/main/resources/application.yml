@@ -23,3 +23,16 @@ opentracing:
     udp-sender:
       host: jaeger
       port: 6831
+
+
+logging:
+  file:
+    name: "myapplog"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  security:
+    enabled: false

@@ -1,3 +1,29 @@
+# How to build locally
+
+### Build jar of services
+
+```bash
+mvn clean package -Dmaven.test.skip=true
+```
+
+### How to run service, for example `ts-config-service`
+
+```bash
+java -jar ts-config-service/target/ts-config-service-1.0.jar
+```
+
+### How to run mongo
+```bash
+docker run --name some-mongo -p 27017:27017 -d mongo:4 
+```
+
+If errors with jaeger occurs, just comment configuration for jaeger in `application.yml`
+
+### How to publish images to docker hub. 
+How to publish images in Docker. Before running the scripts, simply rename the organization from `lwronski` to yours
+```bash
+./publish.sh 
+```
 
 # Train Ticket：A Benchmark Microservice System
 
